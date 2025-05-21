@@ -1,5 +1,4 @@
 import mailchimp from "@mailchimp/mailchimp_marketing"
-import { subscribe } from "diagnostics_channel"
 import { NextResponse } from "next/server"
 
 mailchimp.setConfig({
@@ -29,7 +28,7 @@ export async function POST(request: Request) {
             { status: 201 }
         )
 
-    } catch (error) {
+    } catch  {
         return NextResponse.json(
             {error: "Cette adresse e-mail est déjà inscrite !"},
             { status: 500 }
