@@ -1,13 +1,12 @@
 "use client"
-import Image from "next/image";
+
 import { useState } from "react";
-import { ReactFormState } from "react-dom/client";
 import { ToastContainer, toast } from 'react-toastify';
 
 export default function Home() {
 
   const [email, setEmail] = useState("")
-  const [isLoading, setIsLoading] = useState(false)
+  const [, setIsLoading] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -31,7 +30,7 @@ export default function Home() {
 
       setIsLoading(false)
 
-    } catch (error) {
+    } catch {
       toast.error( "Une erreur est survenue")
     }
   }
@@ -66,7 +65,7 @@ export default function Home() {
                 onChange={(e) => setEmail(e.target.value)}
               />
               <button className="btn ml-4 btn-primary">
-                S'abonner
+                S&apos;abonner
               </button>
             </form>
             <p className="text-xs mt-3">
